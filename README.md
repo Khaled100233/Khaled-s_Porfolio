@@ -2,7 +2,7 @@
 
 Personal portfolio of an AI Engineer specializing in computer vision and LLM-powered systems.
 
-**Live →** https://khaled100233.github.io/LaTex-CV/
+**Live →** https://khaled100233.github.io/Khaled-Ehab-Portfolio/
 
 ## About
 
