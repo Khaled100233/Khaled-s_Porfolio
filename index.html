@@ -3,138 +3,466 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Khaled | Portfolio</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-    }
-    header {
-      background: #1e1e1e;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 42px;
-    }
-    header p {
-      margin: 10px 0 0;
-      font-size: 18px;
-      opacity: 0.85;
-    }
-    .container {
-      width: 90%;
-      max-width: 900px;
-      margin: 40px auto;
-    }
-    .section-title {
-      font-size: 28px;
-      margin-bottom: 15px;
-      border-left: 5px solid #1e1e1e;
-      padding-left: 10px;
-    }
-    .about, .skills, .projects, .contact {
-      background: white;
-      padding: 20px;
-      margin-bottom: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .skills ul {
-      list-style: none;
-      padding: 0;
-    }
-    .skills li {
-      background: #e6e6e6;
-      display: inline-block;
-      padding: 8px 12px;
-      margin: 6px;
-      border-radius: 6px;
-      font-size: 15px;
-    }
-    .project-item {
-      margin-bottom: 15px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-    .project-item:last-child {
-      border-bottom: none;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #1e1e1e;
-      color: white;
-      margin-top: 30px;
-    }
-  </style>
+  <title>Khaled Ehab Attia — AI Engineer</title>
+  <meta name="description" content="Khaled Ehab Attia — AI Engineer specializing in Computer Vision and LLM-powered systems. Based in Cairo, EG." />
+  <meta name="author" content="Khaled Ehab Attia" />
+  <meta name="color-scheme" content="dark light" />
+  <meta property="og:title" content="Khaled Ehab Attia — AI Engineer" />
+  <meta property="og:description" content="AI Engineer specializing in Computer Vision and LLM-powered systems." />
+  <meta property="og:type" content="website" />
+
+  <!-- Set theme BEFORE paint to prevent flash of wrong theme -->
+  <script>
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (systemDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-  <h1>Khaled</h1>
-  <p>Teaching Assistant | AI Engineer to be | CS Graduate | AI Enthusiast</p>
-</header>
-
-<div class="container">
-
-  <section class="about">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I am a Computer Science graduate passionate about Artificial Intelligence, Machine Learning, and Data Science. I work as a Teaching Assistant and continuously improve my technical and analytical skills. I aim to build intelligent systems and impactful AI solutions.
-    </p>
-  </section>
-
-  <section class="skills">
-    <h2 class="section-title">Skills</h2>
-    <ul>
-      <li>Python</li>
-      <li>Machine Learning</li>
-      <li>Deep Learning</li>
-      <li>Computer Vision</li>
-      <li>Data Analysis</li>
-      <li>Data Engineering</li>
-      <li>Linux</li>
-      <li>Teaching</li>
-    </ul>
-  </section>
-
-  <section class="projects">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="project-item">
-      <h3>AI Graduation Project</h3>
-      <p>Worked on data collection, data preparation, model selection, fine-tuning, and visualization. Presented at Cairo ICT in front of Shark Tank Egypt members.</p>
+  <nav id="nav">
+    <div class="wrap">
+      <div class="brand">khaled<strong>.ehab</strong></div>
+      <div class="nav-right">
+        <ul>
+          <li><a href="#about">about</a></li>
+          <li><a href="#work">work</a></li>
+          <li><a href="#experience">experience</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme">
+          <svg class="icon icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <svg class="icon icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </div>
     </div>
+  </nav>
 
-    <div class="project-item">
-      <h3>Computer Vision Models</h3>
-      <p>Built multiple models for detection, classification, and segmentation using modern deep learning techniques.</p>
+  <header class="hero">
+    <div class="wrap">
+      <div class="meta"><span class="dot"></span> available for work · cairo, eg · gmt+2</div>
+      <h1>Khaled <em>Ehab</em> Attia.</h1>
+      <p class="lede">AI Engineer building <em>computer vision</em> systems and <em>LLM-powered agents</em>. Currently teaching at GIU + AAST while pursuing my MSc in Data Science.</p>
+      <div class="links">
+        <a href="mailto:kha.2002.ke@gmail.com"><span>↗</span> email</a>
+        <a href="https://linkedin.com/in/khaled-ehab" target="_blank" rel="noopener"><span>↗</span> linkedin</a>
+        <a href="https://github.com/Khaled100233" target="_blank" rel="noopener"><span>↗</span> github</a>
+        <a href="tel:+201069242612"><span>↗</span> +20 106 924 2612</a>
+      </div>
     </div>
+  </header>
 
-    <div class="project-item">
-      <h3>Data Engineering Pipelines</h3>
-      <p>Created structured pipelines for cleaning, processing, and analyzing data from various sources.</p>
+  <!-- ─────────────────────── ABOUT ─────────────────────── -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="num">01 / about</div>
+        <h2>I build <em>intelligent systems</em>—then teach them.</h2>
+      </div>
+      <div class="body indent reveal">
+        <p>I'm an AI Engineer focused on <em>computer vision</em> and <em>LLM-powered systems</em>. My work spans production deep-learning pipelines—fine-tuned Vision Transformers, real-time object detection, multi-node agentic workflows—combining strong research foundations with practical engineering.</p>
+        <p>Outside of building, I teach. As a Teaching Assistant at the <em>German International University</em> and the <em>Arab Academy for Science & Technology</em>, I run lectures, tutorials, and labs, mentor students through complex implementations, and develop course materials. I'm also pursuing my Master's in Data Science at GIU.</p>
+        <div class="now-grid">
+          <div class="now-card">
+            <div class="label">currently studying</div>
+            <div class="title">MSc, Data Science</div>
+            <div class="sub">GIU · 2025–present</div>
+          </div>
+          <div class="now-card">
+            <div class="label">teaching</div>
+            <div class="title">GIU + AAST</div>
+            <div class="sub">full-time + part-time TA</div>
+          </div>
+          <div class="now-card">
+            <div class="label">learning</div>
+            <div class="title">ACC AI/ML Bootcamp</div>
+            <div class="sub">LLMs · Agents · LangChain · RAG</div>
+          </div>
+        </div>
+      </div>
     </div>
-
   </section>
 
-  <section class="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Email: your-email@example.com</p>
-    <p>GitHub: github.com/yourusername</p>
-    <p>LinkedIn: linkedin.com/in/yourusername</p>
+  <!-- ─────────────────────── WORK ─────────────────────── -->
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="num">02 / work</div>
+        <h2>Selected <em>projects</em>.</h2>
+      </div>
+
+      <article class="project reveal">
+        <div class="year">2025</div>
+        <div>
+          <h3>Retail Analytics <em>Copilot</em></h3>
+          <div class="tags">
+            <span class="tag">LangGraph</span>
+            <span class="tag">DSPy</span>
+            <span class="tag">RAG</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Phi-3.5</span>
+            <span class="tag">Python</span>
+          </div>
+          <p class="lede-p">An AI agent that answers retail analytics questions by intelligently combining document retrieval and SQL database queries—<em>fully local, fully auditable</em>.</p>
+          <ul>
+            <li>Designed an 8-node LangGraph workflow with conditional routing, automated SQL error repair, and format validation—achieving 80%+ end-to-end accuracy.</li>
+            <li>Optimized natural-language-to-SQL conversion with DSPy few-shot learning, lifting query execution success by 50%.</li>
+            <li>Implemented TF-IDF retrieval over policy documents with citation tracking for explainable answers.</li>
+            <li>Deployed entirely on-device via Phi-3.5, processing complex queries with typed outputs and confidence scores.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="year">2026</div>
+        <div>
+          <h3>Robot <em>Referee</em></h3>
+          <div class="tags">
+            <span class="tag">OpenCV</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Object Detection</span>
+            <span class="tag">Real-time</span>
+          </div>
+          <p class="lede-p">An automated referee using computer vision to detect game events and support real-time decision making.</p>
+          <ul>
+            <li>Built image and video pipelines tracking players, ball movement, and field interactions.</li>
+            <li>Applied object detection with rule-based logic to identify fouls, goals, and boundary violations.</li>
+            <li>Designed a modular architecture for real-time inference and scalable feature expansion.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="year">2024</div>
+        <div>
+          <h3>Therma <em>Ear</em> <span class="badge">graduation</span></h3>
+          <div class="tags">
+            <span class="tag">Vision Transformer</span>
+            <span class="tag">VGG16</span>
+            <span class="tag">ResNet50</span>
+            <span class="tag">MobileNetV2</span>
+          </div>
+          <p class="lede-p">Diagnostic system using thermal ear imaging and a Vision Transformer to predict Auricular Acupuncture points—<em>92% accuracy</em>.</p>
+          <ul>
+            <li>Implemented and benchmarked four architectures: VGG16, ResNet50, MobileNetV2, and ViT.</li>
+            <li>Applied data augmentation (cropping, rotation) to expand training data and improve generalization.</li>
+            <li>Integrated an embedded thermal camera for real-time input; conducted extensive literature review to inform the approach.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="year">2026</div>
+        <div>
+          <h3>Reviews Sentiment <em>API</em></h3>
+          <div class="tags">
+            <span class="tag">FastAPI</span>
+            <span class="tag">TextBlob</span>
+            <span class="tag">Docker</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Pandas</span>
+          </div>
+          <p class="lede-p">Full-stack ETL and serving pipeline for product review sentiment. Owned the data layer end-to-end on a team build.</p>
+          <ul>
+            <li>Implemented the full ETL pipeline: extraction from raw CSV, quality assessment (nulls, dupes, type mismatches), and cleaning.</li>
+            <li>Engineered transformation logic—TextBlob NLP scoring with rolling-average sentiment per product, sorted by date.</li>
+            <li>Built the SQLite load step with robust try/except handling for all I/O operations.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="year">2026</div>
+        <div>
+          <h3>Medicare Fraud <em>Detection</em></h3>
+          <div class="tags">
+            <span class="tag">Scikit-learn</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">EDA</span>
+            <span class="tag">Imbalanced Classes</span>
+          </div>
+          <p class="lede-p">ML pipeline for detecting fraudulent Medicare claims from structured healthcare data.</p>
+          <ul>
+            <li>Cleaned, preprocessed, and engineered features to lift model performance.</li>
+            <li>Trained classifiers evaluated by precision, recall, F1, ROC-AUC, and cross-validation.</li>
+            <li>Applied resampling to address class imbalance and improve fraud-detection sensitivity.</li>
+            <li>Generated visualizations to surface suspicious billing patterns and communicate insights.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="year">2023</div>
+        <div>
+          <h3>Cancer Tumor <em>Detection</em> <span class="badge">best project award</span></h3>
+          <div class="tags">
+            <span class="tag">VGG16</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Pillow</span>
+          </div>
+          <p class="lede-p">Tumor classification using a modified VGG16—<em>80% accuracy</em> with high precision. Awarded best project certificate of appreciation.</p>
+          <ul>
+            <li>Performed image preprocessing with Pillow and OpenCV.</li>
+            <li>Evaluated models across accuracy, precision, recall, AUC, and loss to validate performance.</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
   </section>
 
-</div>
+  <!-- ─────────────────────── EXPERIENCE ─────────────────────── -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="num">03 / experience</div>
+        <h2>Where I've <em>worked</em>.</h2>
+      </div>
+      <div class="indent">
 
-<footer>
-  <p>© 2025 Khaled. All rights reserved.</p>
-</footer>
+        <div class="timeline-item reveal">
+          <div class="when">02·2025<br>—present</div>
+          <div>
+            <h3>Full-Time Teaching Assistant</h3>
+            <div class="org">German International University (GIU)</div>
+            <p>Deliver lectures, tutorials, and labs as part of the official teaching load. Contribute to curriculum design, evaluate assignments and exams, and develop course materials. Lead student advising and mentor junior students through complex lab implementations under academic pressure.</p>
+          </div>
+        </div>
 
+        <div class="timeline-item reveal">
+          <div class="when">02·2026<br>—present</div>
+          <div>
+            <h3>Part-Time Teaching Assistant</h3>
+            <div class="org">Arab Academy for Science & Technology (AAST)</div>
+            <p>Support tutorials and lab sessions, prepare teaching materials, grade assignments and lab reports, and guide students through technical troubleshooting during lab work. Contribute to course coordination including attendance, exam prep, and invigilation.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="when">12·2025<br>—present</div>
+          <div>
+            <h3>Freelance — AI & Software</h3>
+            <div class="org">Self-employed</div>
+            <p>Built ML solutions and conducted AI project reviews; delivered Data Science for Cyber Security analyses with threat modeling; engineered the Robot Referee system; investigated energy-consumption patterns through data analysis and visualization.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────── EDUCATION ─────────────────────── -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="num">04 / education</div>
+        <h2>Studies & <em>certifications</em>.</h2>
+      </div>
+      <div class="indent">
+
+        <div class="timeline-item reveal">
+          <div class="when">2025<br>—present</div>
+          <div>
+            <h3>MSc, Data Science</h3>
+            <div class="org">German International University</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="when">2020<br>—2024</div>
+          <div>
+            <h3>BSc, Computer Science · <em>Minor in AI</em></h3>
+            <div class="org">Arab Academy for Science and Technology · GPA 3.65 · Excellent with Honors</div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="when">2026<br>—present</div>
+          <div>
+            <h3>AI/ML Program — Sprints Platform</h3>
+            <div class="org">American Center Cairo (ACC)</div>
+            <p>Full-stack AI/ML bootcamp covering Python, Data Analysis, Supervised & Unsupervised Learning, Deep Learning, NLP, and Generative AI. Advanced topics: LLMs, Prompt Engineering, Agentic AI, LangChain, RAG. <em>6 sprints · 38 modules · 92 hours.</em></p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="when">04·2026</div>
+          <div>
+            <h3>Fundamentals of Deep Learning</h3>
+            <div class="org">NVIDIA Deep Learning Institute</div>
+            <p>Neural network architectures, model training, and optimization with GPU-accelerated computing. Hands-on experience with deep learning frameworks and practical DL workflows.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="when">08·2023</div>
+          <div>
+            <h3>Cyber Security Training (120h)</h3>
+            <div class="org">Information Technology Institute (ITI)</div>
+            <p>CCNA · Introduction to Cyber Security · Ethical Hacking · Palo Alto · FortiGate.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────── STACK ─────────────────────── -->
+  <section id="stack">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="num">05 / stack</div>
+        <h2>Tools I <em>reach for</em>.</h2>
+      </div>
+      <div class="stack-grid indent reveal">
+        <div class="stack-cat">
+          <div class="label">languages</div>
+          <ul>
+            <li>Python</li>
+            <li>C / C++</li>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>SQL · PL/SQL</li>
+            <li>HTML · CSS · PHP</li>
+          </ul>
+        </div>
+        <div class="stack-cat">
+          <div class="label">deep learning</div>
+          <ul>
+            <li>PyTorch</li>
+            <li>TensorFlow / Keras</li>
+            <li>Hugging Face Transformers</li>
+            <li>Vision Transformers</li>
+          </ul>
+        </div>
+        <div class="stack-cat">
+          <div class="label">computer vision</div>
+          <ul>
+            <li>OpenCV</li>
+            <li>Pillow</li>
+            <li>Object Detection</li>
+            <li>Image Processing</li>
+          </ul>
+        </div>
+        <div class="stack-cat">
+          <div class="label">llms & agents</div>
+          <ul>
+            <li>LangChain · LangGraph</li>
+            <li>DSPy</li>
+            <li>RAG Pipelines</li>
+            <li>Prompt Engineering</li>
+          </ul>
+        </div>
+        <div class="stack-cat">
+          <div class="label">data</div>
+          <ul>
+            <li>NumPy · Pandas</li>
+            <li>Scikit-learn</li>
+            <li>Matplotlib · Seaborn</li>
+          </ul>
+        </div>
+        <div class="stack-cat">
+          <div class="label">tooling</div>
+          <ul>
+            <li>FastAPI</li>
+            <li>Docker</li>
+            <li>Git · GitHub</li>
+            <li>Linux</li>
+            <li>Jupyter · Colab · VS Code</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────────────── FOOTER / CONTACT ─────────────────────── -->
+  <footer id="contact">
+    <div class="wrap">
+      <h2 class="reveal">Let's build something <em>worth shipping</em>.</h2>
+      <p class="sub reveal">Open to AI Engineer roles, research collaborations, and freelance projects in computer vision and LLM systems.</p>
+
+      <div class="contact-grid reveal">
+        <div class="contact-item">
+          <div class="label">email</div>
+          <a href="mailto:kha.2002.ke@gmail.com">kha.2002.ke@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="label">phone</div>
+          <a href="tel:+201069242612">+20 106 924 2612</a>
+        </div>
+        <div class="contact-item">
+          <div class="label">linkedin</div>
+          <a href="https://linkedin.com/in/khaled-ehab" target="_blank" rel="noopener">/in/khaled-ehab</a>
+        </div>
+        <div class="contact-item">
+          <div class="label">github</div>
+          <a href="https://github.com/Khaled100233" target="_blank" rel="noopener">/Khaled100233</a>
+        </div>
+      </div>
+
+      <div class="colophon">
+        <span>© 2026 Khaled Ehab Attia · Cairo, EG</span>
+        <span>built by hand · no frameworks</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Sticky nav scroll state ───
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (window.scrollY > 24) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ─── Intersection-observer reveals ───
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ─── Theme toggle ───
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+
+    // Respect system theme changes if user hasn't manually overridden
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      try {
+        if (!localStorage.getItem('theme')) {
+          document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+      } catch (err) {}
+    });
+  </script>
 </body>
 </html>
